@@ -38,7 +38,7 @@
       (new-symbol)))
   (define grid (map (lambda (l) (map place-symbol l)) incomplete))
   (define sol (solve (assert (valid grid))))
-  (map (lambda (l) (map (lambda (x) (evaluate x sol)) l)) grid))
+  (evaluate grid sol))
 
 (define a
 `((x 4 9 3 2 x 8 x x)
