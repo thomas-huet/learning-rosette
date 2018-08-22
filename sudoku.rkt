@@ -41,7 +41,7 @@
   (evaluate grid sol))
 
 (define a
-`((x 4 9 3 2 x 8 x x)
+'((x 4 9 3 2 x 8 x x)
   (x x x x 1 7 x x 4)
   (7 x x x x x 6 2 x)
   (6 x x x 5 x x x x)
