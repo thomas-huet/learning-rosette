@@ -12,8 +12,8 @@
     (cons (map car grid) (transpose (map cdr grid)))))
 
 (define (cells grid)
-  (define (three l) (list (car l) (car (cdr l)) (car (cdr (cdr l)))))
-  (define (tail l) (cdr (cdr (cdr l))))
+  (define (three l) (take l 3))
+  (define (tail l) (list-tail l 3))
   (define (aux l)
     (if (null? (car l))
       '()
