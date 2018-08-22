@@ -1,4 +1,4 @@
-#lang rosette
+#lang rosette/safe
 
 (define (wins-against? a b)
   (define (wins a b)

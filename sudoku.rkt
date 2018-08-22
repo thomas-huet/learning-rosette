@@ -1,4 +1,4 @@
-#lang rosette
+#lang rosette/safe
 
 (define (digit? n)
   (and (integer? n) (>= n 1) (<= n 9)))
