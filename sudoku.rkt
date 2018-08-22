@@ -3,7 +3,7 @@
 (define (digit? n)
   (and (integer? n) (>= n 1) (<= n 9)))
 
-(define (valid-block block)
+(define (valid-block? block)
   (and (andmap digit? block) (apply distinct? block)))
 
 (define (transpose grid)
@@ -22,11 +22,11 @@
     '()
     (append (aux (three grid)) (cells (tail grid)))))
 
-(define (valid grid)
+(define (valid? grid)
   (and
-    (andmap valid-block grid)
-    (andmap valid-block (transpose grid))
-    (andmap valid-block (cells grid))))
+    (andmap valid-block? grid)
+    (andmap valid-block? (transpose grid))
+    (andmap valid-block? (cells grid))))
 
 (define (solve-sudoku incomplete)
   (define (new-symbol)
@@ -37,7 +37,7 @@
       n
       (new-symbol)))
   (define grid (map (lambda (l) (map place-symbol l)) incomplete))
-  (define sol (solve (assert (valid grid))))
+  (define sol (solve (assert (valid? grid))))
   (evaluate grid sol))
 
 (define a
